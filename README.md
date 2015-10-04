@@ -57,6 +57,20 @@ end
 
 HeadDown(workspace[USERNAME].Torso['Right Shoulder'], math.rad(-15.5), 15, 2 / 3)
 
+function HeadDown(neck, angle, num_frames, duration)
+local default_offset = neck.C0
+for frame_index = 1, num_frames do
+neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, -313)
+RunService.Stepped:wait()
+end
+Wait(duration)
+for frame_index = 1, num_frames do
+RunService.Stepped:wait()
+end
+end
+
+HeadDown(workspace[USERNAME].Torso['Right Shoulder'], math.rad(5.5), 15, 2 / 3)
+
 ------------
 while true do wait()
 	size = "1"
