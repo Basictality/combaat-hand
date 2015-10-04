@@ -17,6 +17,22 @@ mes.MeshId = "http://www.roblox.com/asset/?id=13640868"
 mes.TextureId = "http://www.roblox.com/asset/?id=16164110"
 mes.Scale = Vector3.new(1,1,1)
 
+was=game.Players.LocalPlayer.Character
+was.Humanoid.MaxHealth = "9e999"
+was.Head.Transparency = "1"
+Head=Instance.new("Part",was)
+Head.Name = "ExtraHead"
+Head.Transparency="0"
+Head.FormFactor = was.Head.FormFactor
+Head.Size = was.Head.Size
+Head.Color = was.Head.Color
+meshhead=Instance.new("SpecialMesh",Head)
+meshhead.Scale = was.Head.Mesh.Scale
+
+weldHead=Instance.new("Weld",Head)
+weldHead.Part0=was.Head
+weldHead.Part1=Head
+
 
 
 ---animations
