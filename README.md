@@ -29,7 +29,7 @@ for frame_index = 1, num_frames do
 neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
 RunService.Stepped:wait()
 end
-Wait(duration)
+Wait()
 for frame_index = 1, num_frames do
 RunService.Stepped:wait()
 end
@@ -57,7 +57,7 @@ for frame_index = 1, num_frames do
 neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
 RunService.Stepped:wait()
 end
-Wait(duration)
+Wait()
 for frame_index = 1, num_frames do
 RunService.Stepped:wait()
 end
@@ -71,7 +71,7 @@ for frame_index = 1, num_frames do
 neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
 RunService.Stepped:wait()
 end
-Wait(duration)
+Wait()
 for frame_index = 1, num_frames do
 RunService.Stepped:wait()
 end
@@ -114,3 +114,37 @@ game.Debris:AddItem(z,1)
 	z.CFrame = x['Right Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
 	b.CFrame = x['Left Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
 end
+
+
+
+was=game.Players.LocalPlayer.Character
+p=game.Players.LocalPlayer
+c=p.Character
+m=p:GetMouse()
+Player = game:GetService("Players").LocalPlayer
+mouse=Player:GetMouse()
+Cha = Player.Character
+mouse.KeyDown:connect(function(key)
+key:lower()
+if key == "e" then
+blast=Instance.new("Part",was)
+blast.Anchored = true
+blast.BrickColor = BrickColor.new'Really red'
+blast.CFrame = was.Torso.CFrame * CFrame.new(0,-3,0)
+blastmesh=Instance.new("SpecialMesh",blast)
+blastmesh.MeshType = "FileMesh"
+blastmesh.MeshId = "http://www.roblox.com/asset/?id=20329976"
+blastmesh.Scale = Vector3.new(3,1,3)
+wasound = Instance.new("Sound",was)
+wasound.SoundId = "http://www.roblox.com/asset/?id=159504677"
+wasound.Pitch = 1
+wasound.Volume = 1
+wasound.Looped = false
+wasound:Play()
+was.Torso.Anchored = true
+wait()
+was.Torso.CFrame = was.Torso.CFrame + was.Torso.CFrame.lookVector * 10
+was.Torso.Anchored = false
+game.Debris:AddItem(blast,1)
+end
+end)
