@@ -83,40 +83,6 @@ armweld.Part0=x.Torso
 armweld.Part1=x['Right Arm']
 armweld.C0=CFrame.new(1.5,0.3,-0.5) * CFrame.Angles(0,11,-1.3)
 ------------
-while true do wait()
-	size = "1"
-	trans = "0.7"
-	mat = "Neon"
-	color = "Crimson"
-	x = game.Players.LocalPlayer.Character
-b=Instance.new("Part",x)
-b.FormFactor = "Custom"
-b.Size = Vector3.new(size,size,size)
-b.Transparency=trans
-b.Anchored = true
-b.Material = mat
-b.CanCollide = false
-b.BrickColor = BrickColor.new(color)
-
-z=Instance.new("Part",b)
-z.FormFactor = "Custom"
-z.Material = mat
-z.Size = Vector3.new(size,size,size)
-z.Transparency=trans
-z.Anchored = true
-z.CanCollide = false
-z.BrickColor = BrickColor.new(color)
-game.Debris:AddItem(b,1)
-game.Debris:AddItem(z,1)
-
-
-
-	z.CFrame = x['Right Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
-	b.CFrame = x['Left Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
-end
-
-
-
 was=game.Players.LocalPlayer.Character
 p=game.Players.LocalPlayer
 c=p.Character
@@ -148,3 +114,36 @@ was.Torso.Anchored = false
 game.Debris:AddItem(blast,1)
 end
 end)
+
+
+while true do wait()
+	size = "1"
+	trans = "0.7"
+	mat = "Neon"
+	color = "Crimson"
+	x = game.Players.LocalPlayer.Character
+b=Instance.new("Part",x)
+b.FormFactor = "Custom"
+b.Size = Vector3.new(size,size,size)
+b.Transparency=trans
+b.Anchored = true
+b.Material = mat
+b.CanCollide = false
+b.BrickColor = BrickColor.new(color)
+
+z=Instance.new("Part",b)
+z.FormFactor = "Custom"
+z.Material = mat
+z.Size = Vector3.new(size,size,size)
+z.Transparency=trans
+z.Anchored = true
+z.CanCollide = false
+z.BrickColor = BrickColor.new(color)
+game.Debris:AddItem(b,1)
+game.Debris:AddItem(z,1)
+
+
+
+	z.CFrame = x['Right Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
+	b.CFrame = x['Left Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
+end
