@@ -131,6 +131,42 @@ game.Debris:AddItem(blast,1)
 end
 end)
 
+was=game.Players.LocalPlayer.Character
+p=game.Players.LocalPlayer
+c=p.Character
+m=p:GetMouse()
+Player = game:GetService("Players").LocalPlayer
+mouse=Player:GetMouse()
+Cha = Player.Character
+mouse.KeyDown:connect(function(key)
+key:lower()
+if key == "t" then
+
+x=game.Players.LocalPlayer.Character
+local armweld = Instance.new("Weld",x)
+armweld.Part0=x.Torso
+armweld.Part1=x['Right Arm']
+armweld.C0=CFrame.new(1.5,1,-0) * CFrame.Angles(0,0,0)
+lightning=Instance.new("Part",x)
+lightning.FormFactor = "Custom"
+lightning.Size = Vector3.new(0,50,0)
+
+local weld = Instance.new("Weld",lightning)
+weld.Part0=lightning
+weld.Part1=x['Right Arm']
+weld.C0=CFrame.new(0,-25,0)
+game.Lighting.TimeOfDay="0:00"
+wait(1)
+x=game.Players.LocalPlayer.Character
+lightning:remove()
+game.Lighting.TimeOfDay="10:00"
+local armweld = Instance.new("Weld",x)
+armweld.Part0=x.Torso
+armweld.Part1=x['Right Arm']
+armweld.C0=CFrame.new(1.5,0.3,-0.5) * CFrame.Angles(0,11,-1.3)
+end
+end)
+
 
 while true do wait()
 	size = "1"
