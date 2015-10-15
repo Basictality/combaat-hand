@@ -1,22 +1,4 @@
 --------looks
-dom=game.Players.LocalPlayer.Character
-for i,v in pairs(dom:children()) do if v.ClassName=="Hat" then v:remove()
-end
-end
-
-fed = Instance.new("Part",dom)
-fed.Name = "Part1"
-weld=Instance.new("Weld",fed)
-weld.Part0=fed
-weld.Part1=dom["Head"]
-weld.C0=CFrame.new(0,-0.8,0)
-
-
-local mes = Instance.new("SpecialMesh",fed)
-mes.MeshId = "http://www.roblox.com/asset/?id=13640868"
-mes.TextureId = "http://www.roblox.com/asset/?id=16164110"
-mes.Scale = Vector3.new(1,1,1)
-
 was=game.Players.LocalPlayer.Character
 was.Humanoid.MaxHealth = "9e999"
 was.Head.Transparency = "1"
