@@ -49,19 +49,11 @@ end
 
 HeadDown(workspace[USERNAME].Torso['Right Hip'], math.rad(-10.5), 15, 2 / 3)
 
-function HeadDown(neck, angle, num_frames, duration)
-local default_offset = neck.C0
-for frame_index = 1, num_frames do
-neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
-RunService.Stepped:wait()
-end
-Wait()
-for frame_index = 1, num_frames do
-RunService.Stepped:wait()
-end
-end
-
-HeadDown(workspace[USERNAME].Torso['Left Shoulder'], math.rad(-15.5), 15, 2 / 3)
+x=game.Players.LocalPlayer.Character
+local armweld = Instance.new("Weld",x)
+armweld.Part0=x.Torso
+armweld.Part1=x['Left Arm']
+armweld.C0=CFrame.new(-1.5,0.1,0) * CFrame.Angles(0,0,-0.4)
 
 function HeadDown(neck, angle, num_frames, duration)
 local default_offset = neck.C0
