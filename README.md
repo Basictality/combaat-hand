@@ -116,28 +116,39 @@ mouse.KeyDown:connect(function(key)
 key:lower()
 if key == "t" then
 
-x=game.Players.LocalPlayer.Character
-local armweld = Instance.new("Weld",x)
-armweld.Part0=x.Torso
-armweld.Part1=x['Right Arm']
-armweld.C0=CFrame.new(1.5,1,-0) * CFrame.Angles(0,0,0)
-lightning=Instance.new("Part",x)
-lightning.FormFactor = "Custom"
-lightning.Size = Vector3.new(0,50,0)
+was.Humanoid.Jump = true
+was.Torso.Velocity = Vector3.new(0,100,0)
+wait(0.5)
+was.Torso.Anchored = true
 
-local weld = Instance.new("Weld",lightning)
-weld.Part0=lightning
-weld.Part1=x['Right Arm']
-weld.C0=CFrame.new(0,-25,0)
-game.Lighting.TimeOfDay="0:00"
-wait(1)
-x=game.Players.LocalPlayer.Character
-lightning:remove()
-game.Lighting.TimeOfDay="10:00"
-local armweld = Instance.new("Weld",x)
-armweld.Part0=x.Torso
-armweld.Part1=x['Right Arm']
-armweld.C0=CFrame.new(1.5,0.3,-0.5) * CFrame.Angles(0,11,-1.3)
+
+wait(2)
+was.Torso.Anchored = false
+was.Torso.Velocity = Vector3.new(0,-150,0)
+wait(0.3)
+r=Instance.new("Part",was)
+r.Anchored = true
+r.Size = Vector3.new(5,0,5)
+r.Material = "Grass"
+r.CanCollide = false
+
+local mes = Instance.new("SpecialMesh",r)
+mes.MeshId = "http://www.roblox.com/asset/?id=3270017"
+mes.Scale = Vector3.new(3,3,3)
+
+
+	r.BrickColor = BrickColor.new'Sea green'
+	r.CFrame = was.Torso.CFrame * CFrame.new(0,-3,0) * CFrame.Angles(300,0,0)
+			delay(1, function()
+			for i = 0, 1, 0.1 do
+				r.Transparency = i
+				wait()
+			end
+		end)
+for time = 1,20 do wait()
+mes.Scale = Vector3.new(time,time,time)
+end
+
 end
 end)
 
