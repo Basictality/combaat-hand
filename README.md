@@ -141,12 +141,6 @@ pa2.Material = "SmoothPlastic"
 			end
 			end)
 			game.Debris:AddItem(pa2,3)
-			wait(2)
-			x=game.Players.LocalPlayer.Character
-local armweld = Instance.new("Weld",x)
-armweld.Part0=x.Torso
-armweld.Part1=x['Left Arm']
-armweld.C0=CFrame.new(-1.5,0.1,0) * CFrame.Angles(0,0,-0.4)
 			
 
 function onTouched(part)		
