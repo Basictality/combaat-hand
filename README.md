@@ -1,6 +1,7 @@
 --------looks
 was=game.Players.LocalPlayer.Character
 was.Humanoid.MaxHealth = "9e999"
+print'Bas destroy!'
 was.Head.Transparency = "1"
 Head=Instance.new("Part",was)
 Head.Name = "ExtraHead"
@@ -137,10 +138,10 @@ pa2.Material = "SmoothPlastic"
 			delay(3, function()
 			for itrt = 0, 1, 0.1 do
 				pa2.Transparency = itrt
+							game.Debris:AddItem(pa2,3)
 				wait()
 			end
 			end)
-			game.Debris:AddItem(pa2,3)
 			
 
 function onTouched(part)		
