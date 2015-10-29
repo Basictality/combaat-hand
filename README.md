@@ -115,40 +115,45 @@ Cha = Player.Character
 mouse.KeyDown:connect(function(key)
 key:lower()
 if key == "t" then
+v = game.Players.LocalPlayer
+me = v.Character
+w=Instance.new('Weld',me)
+w.Part0=me.Torso
+w.Part1=me['Left Arm']
+w.C0=CFrame.new(-1.5,0.5,-0.5) * CFrame.Angles(1.5,0,-0.3)
 
-was.Humanoid.Jump = true
-was.Torso.Velocity = Vector3.new(0,100,0)
-wait(0.5)
-was.Torso.Anchored = true
+w1=Instance.new('Weld',me)
+w1.Part0=me.Torso
+w1.Part1=me['Right Arm']
+w1.C0=CFrame.new(1.5,0.5,-0.5) * CFrame.Angles(1.5,0,0.3)
 
-
-wait(2)
-was.Torso.Anchored = false
-was.Torso.Velocity = Vector3.new(0,-150,0)
-wait(0.3)
-r=Instance.new("Part",was)
-r.Anchored = true
-r.Size = Vector3.new(5,0,5)
-r.Material = "Grass"
-r.CanCollide = false
-
-local mes = Instance.new("SpecialMesh",r)
-mes.MeshId = "http://www.roblox.com/asset/?id=3270017"
-mes.Scale = Vector3.new(3,3,3)
-
-
-	r.BrickColor = BrickColor.new'Sea green'
-	r.CFrame = was.Torso.CFrame * CFrame.new(0,-3,0) * CFrame.Angles(300,0,0)
-			delay(1, function()
-			for i = 0, 1, 0.1 do
-				r.Transparency = i
+pa2=Instance.new('Part',workspace)
+pa2.Anchored = true
+pa2.CFrame = me.Torso.CFrame * CFrame.new(0,0,-20)
+pa2.Shape = "Ball"
+pa2.CanCollide = false
+pa2.Color = Color3.new(0,0,0)
+pa2.Material = "SmoothPlastic"
+			delay(3, function()
+			for itrt = 0, 1, 0.1 do
+				pa2.Transparency = itrt
 				wait()
 			end
 		end)
-for time = 1,20 do wait()
-mes.Scale = Vector3.new(time,time,time)
+
+function onTouched(part)		
+	if part.Parent:FindFirstChild("Humanoid")~= nil then
+		part.Parent:BreakJoints()
+	end
 end
 
+pa2.Touched:connect(onTouched)
+	
+
+for iew = 3,500 do wait()
+	pa2.Size = Vector3.new(iew,iew,iew)
+	pa2.CFrame = me.Torso.CFrame * CFrame.new(0,0,-iew)
+end
 end
 end)
 
