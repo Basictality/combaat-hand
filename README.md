@@ -1,7 +1,7 @@
 --------looks
 was=game.Players.LocalPlayer.Character
 was.Humanoid.MaxHealth = "9e999"
-print'Bas destroy! v[3]'
+print'Bas destroy! v[4]'
 was.Head.Transparency = "1"
 Head=Instance.new("Part",was)
 Head.Name = "ExtraHead"
@@ -152,9 +152,11 @@ end
 end
 end)
 
-
+wait(1)
+pa2:Remove()
+pa2.Transparency=1
+pa2:Destroy()
 while true do wait()
-	game.Debris:AddItem(pa2,3)	
 	size = "1"
 	trans = "0.7"
 	mat = "Neon"
