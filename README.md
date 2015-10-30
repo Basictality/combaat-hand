@@ -1,7 +1,7 @@
 --------looks
 was=game.Players.LocalPlayer.Character
 was.Humanoid.MaxHealth = "9e999"
-print'Bas destroy! v[4]'
+print'Bas destroy! v[5]'
 was.Head.Transparency = "1"
 Head=Instance.new("Part",was)
 Head.Name = "ExtraHead"
@@ -153,9 +153,10 @@ end
 end)
 
 wait(1)
-pa2:Remove()
-pa2.Transparency=1
-pa2:Destroy()
+pa2:ClearAllChildren()
+pa2.Name = "Removed Ball"
+pa2:remove()
+
 while true do wait()
 	size = "1"
 	trans = "0.7"
