@@ -1,7 +1,7 @@
 --------looks
 was=game.Players.LocalPlayer.Character
 was.Humanoid.MaxHealth = "9e999"
-print'Bas destroy! v[2]'
+print'Bas destroy! v[3]'
 was.Head.Transparency = "1"
 Head=Instance.new("Part",was)
 Head.Name = "ExtraHead"
@@ -134,8 +134,7 @@ pa2.CFrame = me.Torso.CFrame * CFrame.new(0,0,-20)
 pa2.Shape = "Ball"
 pa2.CanCollide = false
 pa2.Color = Color3.new(0,0,0)
-pa2.Material = "SmoothPlastic"
-game.Debris:AddItem(pa2,3)			
+pa2.Material = "SmoothPlastic"		
 
 function onTouched(part)		
 	if part.Parent:FindFirstChild("Humanoid")~= nil then
@@ -153,10 +152,9 @@ end
 end
 end)
 
-game.Debris:AddItem(pa2,3)
-
 
 while true do wait()
+	game.Debris:AddItem(pa2,3)	
 	size = "1"
 	trans = "0.7"
 	mat = "Neon"
