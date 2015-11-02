@@ -16,8 +16,29 @@ weldHead=Instance.new("Weld",Head)
 weldHead.Part0=was.Head
 weldHead.Part1=Head
 
+-----laser holder----
+laserpocket = Instance.new('Part',was['Right Arm'])
+laserpocket.Material = "SmoothPlastic"
+laserpocket.FormFactor = "Custom"
+laserpocket.Size = Vector3.new(0.5,0.7,0.7)
+laserpocket.CanCollide = false
 
+laserpocket1 = Instance.new('Part',laserpocket)
+laserpocket1.Material = "SmoothPlastic"
+laserpocket1.FormFactor = "Custom"
+laserpocket1.Size = Vector3.new(.1,.1,.3)
+laserpocket1.Color = Color3.new(0,0,0)
+laserpocket1.CanCollide = false
 
+laserpweld=Instance.new('Weld',laserpocket)
+laserpweld.Part0=laserpocket
+laserpweld.Part1=was['Right Arm']
+laserpweld.C0=CFrame.new(0.6,0,0)
+
+laserpweld1=Instance.new('Weld',laserpocket)
+laserpweld1.Part0=laserpocket
+laserpweld1.Part1=laserpocket1
+laserpweld1.C0=CFrame.new(-0.1,-0.3,0)
 ---animations
 local USERNAME = game.Players.LocalPlayer.Name
 local RunService = Game:GetService("RunService")
