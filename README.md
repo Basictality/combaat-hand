@@ -33,12 +33,12 @@ laserpocket1.CanCollide = false
 laserpweld=Instance.new('Weld',laserpocket)
 laserpweld.Part0=laserpocket
 laserpweld.Part1=was['Right Arm']
-laserpweld.C0=CFrame.new(0.6,0,0)
+laserpweld.C0=CFrame.new(-0.6,0,0)
 
 laserpweld1=Instance.new('Weld',laserpocket)
 laserpweld1.Part0=laserpocket
 laserpweld1.Part1=laserpocket1
-laserpweld1.C0=CFrame.new(-0.1,-0.3,0)
+laserpweld1.C0=CFrame.new(0.1,-0.3,0)
 ---animations
 local USERNAME = game.Players.LocalPlayer.Name
 local RunService = Game:GetService("RunService")
