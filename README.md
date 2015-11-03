@@ -71,11 +71,15 @@ end
 
 HeadDown(workspace[USERNAME].Torso['Right Hip'], math.rad(-10.5), 15, 2 / 3)
 
-
 local armweld = Instance.new("Weld",was)
 armweld.Part0=was.Torso
 armweld.Part1=was['Left Arm']
-armweld.C0=CFrame.new(-1.5,0.2,0) * CFrame.Angles(0,0,-0.4)
+armweld.C0=CFrame.new(-1.5,0,0) * CFrame.Angles(-0.3,0.1,-0.3)
+
+local armweld1 = Instance.new("Weld",was)
+armweld1.Part0=was.Torso
+armweld1.Part1=was['Right Arm']
+armweld1.C0=CFrame.new(1.5,0,0) * CFrame.Angles(-0.3,0.1,0.3)
 
 function HeadDown(neck, angle, num_frames, duration)
 local default_offset = neck.C0
@@ -88,12 +92,6 @@ for frame_index = 1, num_frames do
 RunService.Stepped:wait()
 end
 end
-
-x=game.Players.LocalPlayer.Character
-local armweld = Instance.new("Weld",x)
-armweld.Part0=x.Torso
-armweld.Part1=x['Right Arm']
-armweld.C0=CFrame.new(1.5,0.3,-0.5) * CFrame.Angles(0,11,-1.3)
 ------------
 was=game.Players.LocalPlayer.Character
 p=game.Players.LocalPlayer
@@ -180,36 +178,3 @@ for iew = 3,500 do wait()
 end
 end
 end)
-
-
-while true do wait()
-	size = "1"
-	trans = "0.7"
-	mat = "Neon"
-	color = "Crimson"
-	x = game.Players.LocalPlayer.Character
-b=Instance.new("Part",x)
-b.FormFactor = "Custom"
-b.Size = Vector3.new(size,size,size)
-b.Transparency=trans
-b.Anchored = true
-b.Material = mat
-b.CanCollide = false
-b.BrickColor = BrickColor.new(color)
-
-z=Instance.new("Part",b)
-z.FormFactor = "Custom"
-z.Material = mat
-z.Size = Vector3.new(size,size,size)
-z.Transparency=trans
-z.Anchored = true
-z.CanCollide = false
-z.BrickColor = BrickColor.new(color)
-game.Debris:AddItem(b,1)
-game.Debris:AddItem(z,1)
-
-
-
-	z.CFrame = x['Right Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
-	b.CFrame = x['Left Arm'].CFrame * CFrame.new(0,-1,0) * CFrame.Angles(math.random(),math.random(),math.random())
-end
