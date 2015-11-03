@@ -1,7 +1,7 @@
 --------looks
 was=game.Players.LocalPlayer.Character
 was.Humanoid.MaxHealth = "9e999"
-print'Bas destroy! v[1.1]'
+print'Bas destroy! v[1] build[2]'
 was.Head.Transparency = "1"
 Head=Instance.new("Part",was)
 Head.Name = "ExtraHead"
